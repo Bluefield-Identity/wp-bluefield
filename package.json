@@ -1,0 +1,44 @@
+{
+  "name": "wp-bluefield",
+  "version": "1.0.0",
+  "description": "WordPress plugin for Bluefield Identity Inc",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "plugin-zip": "wp-scripts plugin-zip --pack-destination=\"../../plugin-zips\""
+  },  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/outsellers/bf-wp-plugin.git"
+  },
+  "keywords": [
+    "click",
+    "fraud"
+  ],
+  "author": "Philip Rudy",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "files": [
+    "pages",
+    "resources",
+    "src",
+    "vendor/composer",
+    "vendor/autoload.php",
+    ".gitignore",
+    "wp-bluefield.php",
+    "composer.json",
+    "composer.lock",
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    "readme.txt"
+  ],
+  "devDependencies": {
+    "@wordpress/scripts": "^27.2.0"
+  }
+}
