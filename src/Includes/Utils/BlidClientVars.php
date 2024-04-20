@@ -19,13 +19,13 @@ class BlidClientVars {
     ];
 
     /**
-     * Schema is set in Bluefield\IncludesMenu\BlidClientGroup
+     * Further schema is set in Bluefield\IncludesMenu\BlidClientGroup
      *
      * @var array - client vars come from the database
      */
-    public  $client_vars_from_options = [];
+    private  $client_vars_as_array = [];
 
-    public $superglobal = [];
+    private $superglobal = [];
 
     public function __construct(array $superglobal = null) {
         $this->superglobal = $superglobal;
@@ -71,20 +71,20 @@ class BlidClientVars {
      * @return void
      */
     public function set_client_vars() {
-        $client_vars_options = $this->get_client_var_keys_from_options();
+        $client_vars_options = $this->get_client_vars_options();
 
         if (isset($client_vars_options) && is_array($client_vars_options)) {
             if (isset($client_vars_options)) {
                 foreach ($client_vars_options as $option => $key) {
                     if (!empty($key)) {
-                        $api_settings['clientVars'][$option] = [
+                        $client_vars[$option] = [
                             $key => $this->get_variable($key)
                         ];
                     }
                 }
 
-                if (isset($api_settings['clientVars'])) {
-                    $this->client_vars_from_options = $api_settings['clientVars'];
+                if (isset($client_vars)) {
+                    $this->client_vars_as_array = $client_vars;
                 }
             }
         }
@@ -96,23 +96,17 @@ class BlidClientVars {
      * @param string|null $key - ClientVar1, ClientVar2, etc.
      * @return mixed|array
      */
-    public function get_client_vars_as_value(?string $key = null, $default = '') {
-        if($clientVar = $this->client_vars_from_options) {
-            if (null !== $key && isset($clientVar[$key]) && is_array($clientVar[$key])) {
-                return array_values($clientVar[$key])[0];
+    public function get_client_var_as_value(?string $key = null, $default = '') {
+        if($client_var = $this->client_vars_as_array) {
+            if (null !== $key && isset($client_var[$key]) && is_array($client_var[$key])) {
+                return array_values($client_var[$key])[0];
             }
         }
 
         return $default;
     }
 
-    public function get_client_var_keys_from_options() {
-        $api_settings = BlidOptions::get_option('api_settings', []);
-
-        return $api_settings['clientVars'] ?? null;
-    }
-
-    public function get_client_var_values() {
-        return $this->client_vars_from_options;
+    public function get_client_vars_options() {
+        return BlidOptions::get_option('client_vars', null);
     }
 }
