@@ -96,40 +96,40 @@ class BlidAdminMenu
 
     public function register_common_settings() {
         add_settings_section(
-            'common-settings-section',
+            'blid-common-settings-section',
             __('Bluefield Identity API Settings', 'bluefield-identity'),
-            [$this, 'common_settings_output'],
+            [$this, 'blid_common_settings_output'],
             self::SETTINGS_PAGE,
             []
         );
 
         add_settings_field(
-            'remote-key',
+            'blid-remote-key',
             '<span class="required">*</span> '. __('Client Remote Key', 'bluefield-identity'),
-            [$this, 'remote_key_callback'],
+            [$this, 'blid_remote_key_callback'],
             self::SETTINGS_PAGE,
-            'common-settings-section',
+            'blid-common-settings-section',
             ['max' => 24]
         );
 
         add_settings_field(
             'account-password',
             '<span class="required">*</span> '. __('Client Account Password', 'bluefield-identity'),
-            [$this, 'account_password_callback'],
+            [$this, 'blid_account_password_callback'],
             self::SETTINGS_PAGE,
-            'common-settings-section',
+            'blid-common-settings-section',
             ['max' => 32]
         );
 
         add_settings_section(
-            'common-settings-section-footer',
+            'blid-common-settings-section-footer',
             '',
-            [$this, 'common_settings_output_footer'],
+            [$this, 'blid_common_settings_output_footer'],
             self::SETTINGS_PAGE,
             []
         );
 
-        register_setting('common-settings-options', $this->option_name, [$this, 'validate_options_char_count']);
+        register_setting('blid-common-settings-options', $this->option_name, [$this, 'validate_options_char_count']);
     }
 
     /**
@@ -181,7 +181,7 @@ class BlidAdminMenu
      *
      */
 
-    public function common_settings_output() {
+    public function blid_common_settings_output() {
         echo '
         <p><a target="_blank" href="https://www.bluefieldidentity.com/">Bluefield Identity</a> is a subscription web service that works on <strong>YOUR SITE</strong> to automatically block invalid traffic.</p>
         <p>Partner with us to address web scrapers, form stuffers, inventory hoarders and a variety of other bad behaviors.</p>
@@ -190,7 +190,7 @@ class BlidAdminMenu
         ';
     }
 
-    public function account_password_callback($args) {
+    public function blid_account_password_callback($args) {
         $options = BlidOptions::get_option($this->option_name);
         $value = isset($options['account_password']) ? $options['account_password'] : '';
         $class = !empty($value) ? 'has-value' : 'required-value-missing-notice';
@@ -199,7 +199,7 @@ class BlidAdminMenu
         echo "<input style='width: 275px' class='".esc_attr($class)."' id='account-password' name='".esc_attr($this->option_name)."[account_password]' type='text' value='" . esc_attr($value) . "' placeholder='Client Account Password' ".esc_attr($max)." />";
     }
 
-    public function remote_key_callback($args) {
+    public function blid_remote_key_callback($args) {
         $options = BlidOptions::get_option($this->option_name);
         $value = isset($options['remote_key']) ? $options['remote_key'] : '';
         $class = !empty($value) ? 'has-value' : 'required-value-missing-notice';
@@ -208,7 +208,7 @@ class BlidAdminMenu
         echo "<input style='width: 275px' class='".esc_attr($class)."' id='remote-key' name='".esc_attr($this->option_name)."[remote_key]' type='text' value='" . esc_attr($value) . "' placeholder='Client Remote Key' ".esc_attr($max)." />";
     }
 
-    public function common_settings_output_footer() {
+    public function blid_common_settings_output_footer() {
         echo '
         <p><span class="required"><strong>*</strong></span> = required field</p>
         <p>Don\'t have a Client Remote Key and Password? <a target="_blank" href="https://www.bluefieldidentity.com/join/">Sign up for your 30 day free trial here</a>. No contract, no obligation and no credit card needed.</p>

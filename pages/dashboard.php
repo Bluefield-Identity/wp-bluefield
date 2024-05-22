@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <div class="wrap" id="bluefield-identity-admin">
 
 <div class="bf--page-title-wrapper">
@@ -20,11 +22,10 @@
         <a href="?page=bluefield_identity-client-vars" class="nav-tab <?php echo $active_tab == 'bluefield_identity-client-vars' ? 'nav-tab-active' : ''; ?>">Additional Variables (Advanced)</a>
     </h2>
 
-
     <form method="post" action="options.php">
         <?php
             if( $active_tab === 'bluefield_identity-api-settings' || $active_tab === 'bluefield_identity' ) {
-                settings_fields('common-settings-options');
+                settings_fields('blid-common-settings-options');
                 do_settings_sections('bluefield_identity-api-settings');
                 submit_button();
 
@@ -32,7 +33,7 @@
                 ?>
                 <div class="bf_client_vars">
                     <?php
-                        settings_fields('client-variables-options');
+                        settings_fields('blid-client-variables-options');
                         do_settings_sections('bluefield_identity-client-vars');
                         submit_button();
                     ?>

@@ -90,23 +90,23 @@ class BlidClientGroup {
     public function register_client_var_fields() {
         /* Front Page Options Section */
         add_settings_section(
-            'client-settings-section',
+            'blid-client-settings-section',
             __('Bluefield Identity Additional Variables (Advanced)', 'bluefield-identity'),
-            [$this, 'render_client_vars_description'],
+            [$this, 'blid_render_client_vars_description'],
             self::PAGE,
             []
         );
 
         add_settings_field(
-            'client-vars',
+            'blid-client-vars',
             null,
-            [$this, 'add_options'],
+            [$this, 'blid_add_options'],
             self::PAGE,
-            'client-settings-section',
+            'blid-client-settings-section',
             []
         );
 
-        register_setting('client-variables-options', $this->option_name, [$this, 'validate_options_char_count']);
+        register_setting('blid-client-variables-options', $this->option_name, [$this, 'validate_options_char_count']);
     }
 
     /**
@@ -161,7 +161,7 @@ class BlidClientGroup {
      *
      */
 
-    public function render_client_vars_description() {
+    public function blid_render_client_vars_description() {
         echo '
         <p class="client-vars-descripton">Bluefield Identity allows you to pass up to 6 additional variables for your tracking and reporting purposes. You pass them to us, we record them and we pass them back in the response object.</p>
         <p>The variables can be anything present in the host website\'s Global variable scope and the maximum length of each variable value (not variable name) is 32 characters.</p>
@@ -170,7 +170,7 @@ class BlidClientGroup {
         ';
     }
 
-    public function add_options() {
+    public function blid_add_options() {
         array_walk($this->fields, [$this, 'add_text_inputs'], $this->option_name);
     }
 
