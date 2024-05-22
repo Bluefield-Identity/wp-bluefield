@@ -3,7 +3,7 @@ Contributors: Bluefield Identity, Craig Heath, Philip Rudy
 Tags: click fraud, web scraping, bot protection, spam protection, website protection, adfraud, ad fraud, click-fraud, bluefield, bluefield identity
 Requires at least: 5.7
 Stable tag: 1.0.0
-Tested up to: 6.3
+Tested up to: 6.5
 License: GPLv2
 
 == Description ==

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Bluefield Identity
- * Plugin URI: https://www.bluefieldidentity.com/
+ * Plugin URI: https://github.com/Bluefield-Identity/wp-bluefield
  * Description: Enables sites to get more conversions by eliminating click fraud, bots, and scrapers
  * Version: 1.0.0
  * Requires at least: 5.0
@@ -41,19 +41,22 @@ $bluefield_api_settings = array_merge(
     ['clientVars' => $client_vars]
 );
 
+use Bluefield\Includes\Utils\BlidSanitize;
+
 global $bluefield_server_data;
 $bluefield_server_data = [
-    'REMOTE_ADDR' => $_SERVER['REMOTE_ADDR'] ?? '',
-    'HTTP_USER_AGENT' => $_SERVER['HTTP_USER_AGENT'] ?? '',
-    'QUERY_STRING' => $_SERVER['QUERY_STRING'] ?? '',
-    'HTTP_HOST' => $_SERVER['HTTP_HOST'] ?? '',
-    'HTTP_ACCEPT' => $_SERVER['HTTP_ACCEPT'] ?? '',
-    'REQUEST_URI' => $_SERVER['REQUEST_URI'] ?? '',
-    'HTTP_ACCEPT_ENCODING' => $_SERVER['HTTP_ACCEPT_ENCODING'] ?? '',
-    'HTTP_ACCEPT_LANGUAGE' => $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '',
-    'REQUEST_METHOD' => $_SERVER['REQUEST_METHOD'] ?? '',
-    'HTTP_REFERER' => $_SERVER['HTTP_REFERER'] ?? '',
+    'REMOTE_ADDR' => isset($_SERVER['REMOTE_ADDR']) ? BlidSanitize::validate_remote_addr($_SERVER['REMOTE_ADDR']) : '',
+    'HTTP_USER_AGENT' => isset($_SERVER['HTTP_USER_AGENT']) ? BlidSanitize::sanitize_user_agent($_SERVER['HTTP_USER_AGENT']) : '',
+    'QUERY_STRING' => isset($_SERVER['QUERY_STRING']) ? BlidSanitize::sanitize_query_string($_SERVER['QUERY_STRING']) : '',
+    'HTTP_HOST' => isset($_SERVER['HTTP_HOST']) ? BlidSanitize::sanitize_http_host($_SERVER['HTTP_HOST']) : '',
+    'HTTP_ACCEPT' => isset($_SERVER['HTTP_ACCEPT']) ? BlidSanitize::sanitize_http_accept($_SERVER['HTTP_ACCEPT']) : '',
+    'REQUEST_URI' => isset($_SERVER['REQUEST_URI']) ? BlidSanitize::sanitize_request_uri($_SERVER['REQUEST_URI']) : '',
+    'HTTP_ACCEPT_ENCODING' => isset($_SERVER['HTTP_ACCEPT_ENCODING']) ? BlidSanitize::sanitize_http_accept_encoding($_SERVER['HTTP_ACCEPT_ENCODING']) : '',
+    'HTTP_ACCEPT_LANGUAGE' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? BlidSanitize::sanitize_http_accept_language($_SERVER['HTTP_ACCEPT_LANGUAGE']) : '',
+    'REQUEST_METHOD' => isset($_SERVER['REQUEST_METHOD']) ? BlidSanitize::sanitize_request_method($_SERVER['REQUEST_METHOD']) : '',
+    'HTTP_REFERER' => isset($_SERVER['HTTP_REFERER']) ? BlidSanitize::sanitize_http_referer($_SERVER['HTTP_REFERER']) : '',
 ];
+
 
 use Bluefield\Includes\API\BlidFilter;
 use Bluefield\Includes\Utils\BlidUser;
@@ -129,7 +132,7 @@ add_action('init', 'blid_set_visitor');
 
 use \Bluefield\Includes\Utils\BlidRules;
 
-function do_blid_filter() {
+function blid_do_filter() {
     $run_filter = apply_filters('blid__pre_run_filter', true);
 
     $rules = new BlidRules();
@@ -138,6 +141,6 @@ function do_blid_filter() {
         do_action('blid__filter');
     }
 }
-add_action('template_redirect', 'do_blid_filter');
+add_action('template_redirect', 'blid_do_filter');
 
 
