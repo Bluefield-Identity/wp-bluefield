@@ -2,12 +2,6 @@
     "name": "philip/wp-bluefield",
     "description": "WordPress plugin for Bluefield Identity Inc",
     "type": "wordpress-plugin",
-    "require-dev": {
-        "vlucas/phpdotenv": "^5.6",
-        "10up/wp_mock": "^0.3.0",
-        "wp-phpunit/wp-phpunit": "^6.3",
-        "yoast/phpunit-polyfills": "^2.0"
-    },
     "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
