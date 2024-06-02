@@ -48,4 +48,8 @@ class BlidSanitize {
     public static function sanitize_http_referer($referer) {
         return sanitize_textarea_field($referer);
     }
+
+    public static function sanitize_cookie($cookie) {
+        return sanitize_textarea_field($cookie);
+    }
 }

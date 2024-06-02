@@ -1,6 +1,8 @@
 <?php
 namespace Bluefield\Includes\Utils;
 
+use Bluefield\Includes\Utils\BlidSanitize;
+
 class BlidSession {
     /**
      * The name of the cookie
@@ -36,7 +38,7 @@ class BlidSession {
     }
 
     public function get_session_cookie() {
-        $cookie_value = isset( $_COOKIE[ $this->_cookie ] ) ? wp_unslash( $_COOKIE[ $this->_cookie ] ) : false;
+        $cookie_value = isset( $_COOKIE[ $this->_cookie ] ) ? wp_unslash( BlidSanitize::sanitize_cookie($_COOKIE[ $this->_cookie ]) ) : false;
 
         if(empty($cookie_value) || ! is_string($cookie_value)) {
             return false;

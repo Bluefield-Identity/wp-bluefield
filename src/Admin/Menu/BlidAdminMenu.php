@@ -113,7 +113,7 @@ class BlidAdminMenu
         );
 
         add_settings_field(
-            'account-password',
+            'blid-account-password',
             '<span class="required">*</span> '. __('Client Account Password', 'bluefield-identity'),
             [$this, 'blid_account_password_callback'],
             self::SETTINGS_PAGE,
