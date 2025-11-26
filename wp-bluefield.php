@@ -3,7 +3,7 @@
  * Plugin Name: Bluefield Identity
  * Plugin URI: https://github.com/Bluefield-Identity/wp-bluefield
  * Description: Enables sites to get more conversions by eliminating click fraud, bots, and scrapers
- * Version: 1.0.0
+ * Version: 2.0.0
  * Requires at least: 5.0
  * Requires PHP: 5.6.20
  * Author: Bluefield Identity Inc.
@@ -141,6 +141,8 @@ function blid_do_filter() {
         do_action('blid__filter');
     }
 }
-add_action('template_redirect', 'blid_do_filter');
+#add_action('template_redirect', 'blid_do_filter');
+
+add_action('plugins_loaded', 'blid_do_filter', 0);
 
 

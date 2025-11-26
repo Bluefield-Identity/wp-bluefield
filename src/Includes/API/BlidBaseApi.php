@@ -76,7 +76,7 @@ class BlidBaseApi {
         $this->body = array_merge([
             'clientRemoteKey' => $remote_key,
             'clientRemotePassword' => $account_password,
-            'clientRequestDateTime' => '',
+            'clientRequestDateTime' => gmdate('Y-m-d H:i:s.u'),
             'visitorRemoteAddr' => '',
             'visitorUserAgent' => '',
             'visitorQueryString' => '',
@@ -99,6 +99,19 @@ class BlidBaseApi {
 
         $url = "{$url}?" . http_build_query($this->body);
 
+
+        $response = @file_get_contents($url);
+
+        // Parse response and check verdict
+        $response_body = json_decode($response, true);
+        $verdict = $result['data'][0][1] ?? 'Pass'; // Default to Pass if parsing fails
+    
+        if ($verdict === 'Fail') {
+            http_response_code(403);
+            exit(); // Stop all processing immediately
+        }
+
+        /*
         $response = $this->wp_remote_get($url);
         
         if (is_wp_error($response)) {
@@ -109,9 +122,10 @@ class BlidBaseApi {
         if($response_code !== 200) {
             throw new \Exception("Unexpected response code: {$response_code}");
         }
-
+        
         $response_body = json_decode(wp_remote_retrieve_body($response), true);
-
+        */
+        
         set_transient('bluefield-filter-cache', [
             'response' => $response_body,
         ], 10 * MINUTE_IN_SECONDS);
