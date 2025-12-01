@@ -6,7 +6,7 @@
     <div class="bf--page-header">
     <?php
         $logo = BLUEFIELD_PLUGIN_URL . 'resources/images/bluefield_logo_b.webp';
-        echo '<h1>Bluefield Identity - Settings</h1>';
+        echo '<h1>JunkShun by Bluefield Identity - Settings</h1>';
         settings_errors();
     ?>
     </div>
