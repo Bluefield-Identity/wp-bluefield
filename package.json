@@ -1,7 +1,7 @@
 {
-  "name": "wp-bluefield",
-  "version": "1.0.0",
-  "description": "WordPress plugin for Bluefield Identity Inc",
+  "name": "wp-junkshun",
+  "version": "1.0.1",
+  "description": "WordPress plugin for JunkShun",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -17,7 +17,15 @@
     "click",
     "fraud"
   ],
-  "author": "Philip Rudy",
+  "author": {
+    "name": "JunkShun",
+    "url": "https://www.junkshun.com"
+  },
+  "contributors": [
+    "Philip Rudy",
+    "Craig Heath",
+    "Eugene Monsvetov"
+  ],
   "license": "GPL-2.0-or-later",
   "bugs": {
     "url": ""
@@ -30,7 +38,7 @@
     "vendor/composer",
     "vendor/autoload.php",
     ".gitignore",
-    "wp-bluefield.php",
+    "wp-junkshun.php",
     "composer.json",
     "composer.lock",
     "package.json",
