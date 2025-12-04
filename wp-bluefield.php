@@ -145,4 +145,6 @@ function blid_do_filter() {
 
 add_action('plugins_loaded', 'blid_do_filter', 0);
 
+#add_action('plugins_loaded', 'blid_do_filter', 0);
+
 
