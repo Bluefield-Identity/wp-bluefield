@@ -141,8 +141,8 @@ function blid_do_filter() {
         do_action('blid__filter');
     }
 }
-#add_action('template_redirect', 'blid_do_filter');
+add_action('template_redirect', 'blid_do_filter');
 
-add_action('plugins_loaded', 'blid_do_filter', 0);
+#add_action('plugins_loaded', 'blid_do_filter', 0);
 
 
