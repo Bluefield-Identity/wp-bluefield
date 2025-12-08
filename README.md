@@ -2,33 +2,43 @@
 Prevent click fraud/site scraping using JunkShun's WordPress plugin.
 
 ## Description
-Click fraud happens when someone who never intends to do business with you (a competitor, a person or a bot) clicks on your paid ads and wastes your ad budget.
+JunkShun is a click fraud prevention web service that works directly on your website to screen every incoming click and lets you define the visitor pool you want your ads recorded from. Visitors who fail our filters never register their arrival with the ad platforms - so your ad budget isn't charged.
 
-Web scraping is automated extraction and collection of data (think: email addresses and catalog info) from a website which is then exported to various third parties (like spammers and competitors).
+Unlike other click fraud solutions, JunkShun lets you block not only fraudulent traffic but also visitors you consider undesirable - configure whitelists, blacklists, geofencing by country, state or radius, customized rate limits, VPN and proxy blocking, and more. Traffic that ad platforms would consider legitimate but that you'd rather not pay for. And because JunkShun works on your website, it protects all paid traffic sources - not just Google, Facebook, and Microsoft.
 
-JunkShun helps to prevent click fraud and web scraping with the most effective service in the industry keeping your ads safe and your content secure. Quick and easy installation provides immediate real-time protection for all your site's incoming traffic.
+Using automated bid strategies? JunkShun gives your campaigns cleaner data to learn from - meaning less wasted ad spend during the learning phase.
 
-### What does the JunkShun WordPress Plugin offer?
-Our service screens every page request on your site for every visitor. We work with ALL paid traffic advertisers (Google, Microsoft, Meta Facebook/Instagram, Twitter/X, TikTok, Reddit, Yahoo, etc) as well as all organic (non paid) traffic. For every visitor page request, the plugin delivers a pass or fail recommendation before anything else happens on your site. Fails for paid clicks ensure the advertiser shouldn't charge you for the click thereby preserving your ad budget for visitors who are more likely to do business with you.
+## Frequently Asked Questions
 
-### What does JunkShun screen out?
-JunkShun shields client sites from traffic that likely has no genuine intent of doing business with your website. Our filter targets and counters clicks from:
+**Will this block legitimate customers?**
+Our filter system is designed to identify patterns that legitimate visitors don't exhibit. You have full control over multiple filters to ensure they match your business needs. Plus, you can whitelist any IP addresses you want to always allow through.
 
-* Bad actors - Bots, frequent ad click visitors/abusers, competitors clicking your ads to deplete your ad budget, spam web forms, scrape content, surveil, or conduct other malicious tasks.
-* Flagged visitors - JunkShun maintains an extensive database of actors known for web misconduct. If these flagged visitors have previously triggered our filters for other clients and have received a temporary "timeout", they're likely not on your website with genuine intentions. We act accordingly.
-* Geofenced Visitors - Visitors outside your defined operational regions remain a significant source of superfluous ad spend. JunkShun's WordPress plugin addresses this issue ensuring you don't expend funds on users beyond your designated zones.
-* Multiple Layers of Protection - JunkShun currently applies 26 distinct filters, designed to counteract click fraud and thwart dodgy organic traffic. We work with our clients to identify emerging trends and we constantly refine our filters to provide best in class protection.
+**Do I need technical knowledge to use JunkShun?**
+Not at all. Our interface is designed for marketers and business owners, not developers. If you can use Google Ads, you can use JunkShun. Plus, our default settings work great for most businesses.
 
-#### Features
-* Centralize all settings and options in one intuitive admin menu page.
-* Seamlessly integrate with your JunkShun account via our plugin settings.
-* Incorporate up to six unique client variables to dynamically monitor various request and server metrics.
-* Receive instantaneous recommendations from our proprietary filter.
-* No contracts. Month to month service with no penalties.
-* No obligation to continue. If for whatever reason you don't agree that our service was worth the monthly bill, simply don't pay it. We'll suspend your account and if you decide to return, simply pay the past due amount and we're partners again. We're that confident in our performance.
+**How quickly can I get started?**
+Setup takes less than 5 minutes. As soon as you configure your filters, JunkShun starts protecting your campaigns immediately. Most users see fraudulent clicks being blocked within the first hour.
 
-#### Requirements
+**What happens after the free month?**
+We'll send you a detailed click report showing exactly how many fraudulent clicks we blocked, both paid and organic. You'll also receive an invoice with 14 days to pay. If you're not convinced, simply don't pay and your account will be suspended. No hassles, no hidden charges.
+
+**Will your plugin slow down my website?**
+No. The JunkShun service is designed to provide the fastest response possible (average response time is 12 milliseconds) and is hosted on a robust cloud network guaranteeing the quickest routing possible.
+
+## Installation
+1. Install the plugin
+2. Visit https://www.junkshun.com/join and apply to partner with JunkShun
+3. Receive your welcome email containing your Client Remote Key, Client Remote Password, and dashboard login credentials.
+4. Open the JunkShun API Settings tab in your WP Plugins Dashboard, add your Client Remote Key and Client Remote Password and click Save Changes
+
+### After Activation
+1. Visit your JunkShun Client Dashboard at https://clients.bluefieldidentity.com
+2. You can make changes to how your traffic is filtered there and those changes are instantly applied to incoming site requests
+
+## Requirements
+* WordPress 5.7+
+* PHP 5.6.20+
 * A registered JunkShun account is required. Apply to partner today at https://www.junkshun.com/join
 
-#### Terms and Conditions
+## Terms and Conditions
 * Please take the time to read our [Privacy Policy and Terms and Conditions](https://www.junkshun.com/privacy/).
