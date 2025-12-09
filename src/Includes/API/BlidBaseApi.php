@@ -70,7 +70,7 @@ class BlidBaseApi {
         }
 
         if(!$account_password) {
-            throw new \Exception("Missing account password.");
+            throw new \Exception("Missing remote password.");
         }
 
         $this->body = array_merge([
@@ -142,7 +142,7 @@ class BlidBaseApi {
 
     public function get_remote_key() {
         if(!$this->remote_key) {
-            throw new \Exception("Missing Bluefield Remote Key.");
+            throw new \Exception("Missing JunkShun Remote Key.");
         }
 
         return $this->remote_key;
@@ -150,7 +150,7 @@ class BlidBaseApi {
 
     public function get_password() {
         if(!$this->password) {
-            throw new \Exception("Missing Bluefield Account Password.");
+            throw new \Exception("Missing JunkShun Remote Password.");
         }
 
         return $this->password;
