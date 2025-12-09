@@ -63,8 +63,8 @@ class BlidAdminMenu
         $page_identifier = $this->get_page_identifier();
 
         $menu = add_menu_page(
-            'Bluefield Identity: ' . __('Dashboard', 'bluefield-identity'),
-            'Bluefield Identity',
+            'JunkShun: ' . __('Dashboard', 'bluefield-identity'),
+            'JunkShun',
             $manage_capability,
             $page_identifier,
             [$this, 'show_page'],
@@ -74,7 +74,7 @@ class BlidAdminMenu
 
         $submenu = add_submenu_page(
             $page_identifier,
-            'Bluefield Identity: ' . __('Plugin Settings', 'bluefield-identity'),
+            'JunkShun: ' . __('Plugin Settings', 'bluefield-identity'),
             __('Plugin Settings', 'bluefield-identity'),
             $manage_capability,
             self::SETTINGS_PAGE,
