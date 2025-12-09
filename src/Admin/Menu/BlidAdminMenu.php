@@ -97,7 +97,7 @@ class BlidAdminMenu
     public function register_common_settings() {
         add_settings_section(
             'blid-common-settings-section',
-            __('Bluefield Identity API Settings', 'bluefield-identity'),
+            __('JunkShun API Settings', 'bluefield-identity'),
             [$this, 'blid_common_settings_output'],
             self::SETTINGS_PAGE,
             []
@@ -183,9 +183,8 @@ class BlidAdminMenu
 
     public function blid_common_settings_output() {
         echo '
-        <p><a target="_blank" href="https://www.junkshun.net/">JunkShun</a> is a subscription web service that works on <strong>YOUR SITE</strong> to automatically block invalid traffic.</p>
-        <p>Partner with us to address web scrapers, form stuffers, inventory hoarders and a variety of other bad behaviors.</p>
-        <p>Bluefield Identity allows you to deny invalid traffic from running up your paid search bill for ALL advertisers.  Set your own rate limits, define geography fences, reduce proxied traffic and more.</p>
+        <p><a target="_blank" href="https://www.junkshun.net/">JunkShun</a> screens every incoming click and lets you define the visitor pool you want your ads recorded from. Failed visitors never register with the ad platforms - so your ad budget isn't charged.</p>
+        <p>Block not only fraudulent traffic but also visitors you consider undesirable - configure whitelists, blacklists, geofencing, custom rate limits, VPN and proxy blocking, and more. Works with most paid traffic sources, not just Google, Facebook, and Microsoft.</p>
         <p>Click <a target="_blank" href="https://www.junkshun.net/">here</a> to learn more!</p>
         ';
     }
@@ -211,8 +210,8 @@ class BlidAdminMenu
     public function blid_common_settings_output_footer() {
         echo '
         <p><span class="required"><strong>*</strong></span> = required field</p>
-        <p>Don\'t have a Client Remote Key and Password? <a target="_blank" href="https://www.junkshun.net/join/">Sign up for your 30 day free trial here</a>. No contract, no obligation and no credit card needed.</p>
-        <p>Already signed up? Your Bluefield Identity Client Dashboard gives you access to your JunkShun account settings, contacts for product support, account reporting, and billing status and history.</p>
+        <p>Don\'t have a Client Remote Key and Password? <a target="_blank" href="https://www.junkshun.net/join/">Sign up here</a> - no contract, no obligation, no credit card needed.</p>
+        <p>Already signed up? Your Bluefield Identity Client Dashboard gives you access to your JunkShun account filter settings, support resources, account reporting, and billing history.</p>
         <p>Access the Client Dashboard <a target="_blank" href="https://clients.bluefieldidentity.com/">here</a>.</p>
         ';
     }
