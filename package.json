@@ -19,7 +19,7 @@
   ],
   "author": {
     "name": "JunkShun",
-    "url": "https://www.junkshun.com"
+    "url": "https://www.junkshun.net"
   },
   "contributors": [
     "Craig Heath",
@@ -38,7 +38,7 @@
     "vendor/composer",
     "vendor/autoload.php",
     ".gitignore",
-    "wp-junkshun.php",
+    "wp-bluefield.php",
     "composer.json",
     "composer.lock",
     "package.json",
