@@ -1,6 +1,6 @@
 {
     "name": "philip/wp-bluefield",
-    "description": "WordPress plugin for Bluefield Identity Inc",
+    "description": "WordPress plugin for JunkShun by Bluefield Identity Inc",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "autoload": {
