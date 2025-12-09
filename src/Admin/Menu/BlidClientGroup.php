@@ -91,7 +91,7 @@ class BlidClientGroup {
         /* Front Page Options Section */
         add_settings_section(
             'blid-client-settings-section',
-            __('Bluefield Identity Additional Variables (Advanced)', 'bluefield-identity'),
+            __('JunkShun Additional Variables (Advanced)', 'bluefield-identity'),
             [$this, 'blid_render_client_vars_description'],
             self::PAGE,
             []
@@ -163,10 +163,10 @@ class BlidClientGroup {
 
     public function blid_render_client_vars_description() {
         echo '
-        <p class="client-vars-descripton">Bluefield Identity allows you to pass up to 6 additional variables for your tracking and reporting purposes. You pass them to us, we record them and we pass them back in the response object.</p>
+        <p class="client-vars-descripton">JunkShun allows you to pass up to 6 additional variables per request for your tracking and reporting purposes. You pass them to us, we record them and we pass them back in the response object.</p>
         <p>The variables can be anything present in the host website\'s Global variable scope and the maximum length of each variable value (not variable name) is 32 characters.</p>
-        <p>Please note: Bluefield Identity does NOT store the name of the variable you pass us, just its value.  Our return data object will refer to them as "clientVar1", "clientVar2" and so on.  If you change a value you choose to send us from one variable to another, and you are using our return data object\'s "clientVar" values in analytics or other reporting, be advised that you will need to adjust your use of the returned data to match your change.  We do not track variable changes and are not responsible for such changes made.</p>
-        <p>If you have any questions about this feature, please use the Contact Support option in your <a target="_blank" href="https://clients.bluefieldidentity.com/">Bluefield Identity Client Dashboard</a>.</p>
+        <p>Please note: JunkShun does NOT store the name of the variable you pass us, just its value.  Our return data object will refer to them as "clientVar1", "clientVar2" and so on.  If you change a value you choose to send us from one variable to another, and you are using our return data object\'s "clientVar" values in analytics or other reporting, be advised that you will need to adjust your use of the returned data to match your change.  We do not track variable changes and are not responsible for such changes made.</p>
+        <p>If you have any questions about this feature, please use the Contact Support option in your <a target="_blank" href="https://clients.bluefieldidentity.com/">Client Dashboard</a>.</p>
         ';
     }
 
