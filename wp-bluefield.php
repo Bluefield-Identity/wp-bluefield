@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Bluefield Identity
+ * Plugin Name: JunkShun by Bluefield Identity
  * Plugin URI: https://github.com/Bluefield-Identity/wp-bluefield
- * Description: Enables sites to get more conversions by eliminating click fraud, bots, and scrapers
+ * Description: Protect your ad budget by blocking unwanted clicks before they're billed
  * Version: 2.0.0
  * Requires at least: 5.0
  * Requires PHP: 5.6.20
  * Author: Bluefield Identity Inc.
- * Author URI: https://www.bluefieldidentity.com/
+ * Author URI: https://www.junkshun.net/
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Text Domain: bluefield-identity
