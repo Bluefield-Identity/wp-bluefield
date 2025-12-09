@@ -5,7 +5,7 @@
 <div class="bf--page-title-wrapper">
     <div class="bf--page-header">
     <?php
-        $logo = BLUEFIELD_PLUGIN_URL . 'resources/images/bluefield_logo_b.webp';
+        $logo = BLUEFIELD_PLUGIN_URL . 'resources/images/JunkShun_Logo_TransP.png';
         echo '<h1>JunkShun by Bluefield Identity - Settings</h1>';
         settings_errors();
     ?>
