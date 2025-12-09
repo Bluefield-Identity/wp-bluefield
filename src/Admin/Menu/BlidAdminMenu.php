@@ -183,7 +183,7 @@ class BlidAdminMenu
 
     public function blid_common_settings_output() {
         echo '
-        <p><a target="_blank" href="https://www.junkshun.net/">JunkShun</a> screens every incoming click and lets you define the visitor pool you want your ads recorded from. Failed visitors never register with the ad platforms - so your ad budget isn't charged.</p>
+        <p><a target="_blank" href="https://www.junkshun.net/">JunkShun</a> screens every incoming click and lets you define the visitor pool you want your ads recorded from. Failed visitors never register with the ad platforms - so your ad budget isn\'t charged.</p>
         <p>Block not only fraudulent traffic but also visitors you consider undesirable - configure whitelists, blacklists, geofencing, custom rate limits, VPN and proxy blocking, and more. Works with most paid traffic sources, not just Google, Facebook, and Microsoft.</p>
         <p>Click <a target="_blank" href="https://www.junkshun.net/">here</a> to learn more!</p>
         ';
