@@ -163,10 +163,9 @@ class BlidClientGroup {
 
     public function blid_render_client_vars_description() {
         echo '
-        <p class="client-vars-descripton">JunkShun allows you to pass up to 6 additional variables per request for your tracking and reporting purposes. You pass them to us, we record them and we pass them back in the response object.</p>
-        <p>The variables can be anything present in the host website\'s Global variable scope and the maximum length of each variable value (not variable name) is 32 characters.</p>
-        <p>Please note: JunkShun does NOT store the name of the variable you pass us, just its value.  Our return data object will refer to them as "clientVar1", "clientVar2" and so on.  If you change a value you choose to send us from one variable to another, and you are using our return data object\'s "clientVar" values in analytics or other reporting, be advised that you will need to adjust your use of the returned data to match your change.  We do not track variable changes and are not responsible for such changes made.</p>
-        <p>If you have any questions about this feature, please use the Contact Support option in your <a target="_blank" href="https://clients.bluefieldidentity.com/">Client Dashboard</a>.</p>
+        <p class="client-vars-descripton">JunkShun lets you pass up to 6 custom variables per request for your own tracking and reporting purposes. We record them and return them in the response object as clientVar1 through clientVar6.</p>
+        <p>Each variable value can be up to 32 characters. We store only the value, not the variable name - so if you change which variables you send, you\'ll need to update your reporting to match.</p>
+        <p>Questions about this feature? Use the Contact Support option in your <a target="_blank" href="https://clients.bluefieldidentity.com/">Client Dashboard</a>.</p>
         ';
     }
 
