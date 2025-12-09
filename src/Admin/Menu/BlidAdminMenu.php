@@ -68,7 +68,8 @@ class BlidAdminMenu
             $manage_capability,
             $page_identifier,
             [$this, 'show_page'],
-            'dashicons-shield',
+            // 'dashicons-shield',
+            BLUEFIELD_PLUGIN_URL . 'resources/images/junkshun-icon-20x20.png',
             98
         );
 
