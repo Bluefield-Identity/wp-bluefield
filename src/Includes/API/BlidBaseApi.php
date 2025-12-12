@@ -64,13 +64,8 @@ class BlidBaseApi {
         $account_password = $this->get_password();
         $url = $this->get_base_api_url();
 
-        //A little redundant i know
-        if(!$remote_key) {
-            throw new \Exception("Missing remote key.");
-        }
-
-        if(!$account_password) {
-            throw new \Exception("Missing remote password.");
+        if (!$remote_key || !$account_password) {
+            return null;
         }
 
         $this->body = array_merge([
